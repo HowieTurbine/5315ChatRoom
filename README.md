@@ -15,11 +15,36 @@
 - 定期发送心跳包，说明自身的存在
 
 
-##报文通信规范
-- 通信报文
+##通信规范
+- 注册报文(C->S)
 
         {
-          "status":"(error/ok)",
+           "status":(error/ok)
+           "content":{
+            "name":(name),
+            "time":(time)
+           }
+            "msg":{
+            "code":(error code),
+            "docs":(detail msg)
+        }
+- 心跳报文(C->S)
+
+        {
+           "status":(error/ok)
+           "content":{
+            "name":(name),
+            "time":(time)
+           }
+            "msg":{
+            "code":(error code),
+            "docs":(detail msg)
+        }
+        
+- 通信报文(S->C)
+
+        {
+          "status":(error/ok),
           "content":{
             "from":(username),
             "to":(username),
@@ -28,7 +53,7 @@
            }
             "msg":{
             "code":(error code),
-            "docs":(msg)
+            "docs":(detail msg)
             }
         }
         
