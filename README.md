@@ -25,10 +25,10 @@
             "time":(time)
            }
             "msg":{
-            "code":(error code),
+            "code":(status code),
             "docs":(detail msg)
         }
-- 心跳报文(C->S)
+- 心跳报文(C<->S)
 
         {
            "status":(error/ok)
@@ -37,7 +37,7 @@
             "time":(time)
            }
             "msg":{
-            "code":(error code),
+            "code":(status code),
             "docs":(detail msg)
         }
         
@@ -52,14 +52,16 @@
             "content":(content)
            }
             "msg":{
-            "code":(error code),
+            "code":(status code),
             "docs":(detail msg)
             }
         }
         
-- Error Code
+- Status Code
 
         200: OK
+        201: Register msg
+        202: Communication msg
         
         500: User Not Exist
         501: Internal Logic Error
@@ -70,9 +72,9 @@
 ## Demo
 
 ## Contributor
-Howie Zhao: 
-Ziqi Wang:
-Zekun Zhang:
+- Howie Zhao: 
+- Ziqi Wang:
+- Zekun Zhang:
  
 
 
